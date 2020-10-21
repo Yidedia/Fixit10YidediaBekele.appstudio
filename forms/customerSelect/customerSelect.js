@@ -18,16 +18,16 @@ customerSelect.onshow = function() {
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)
 
   if (req.status == 200) { //transit worked.
-    results = JSON.parse(req.responseText)
-    console.log(results)
+    customerResults = JSON.parse(req.responseText)
+    console.log(customerResults)
   }
-  if (results.length == 0) {
+  if (customerResults.length == 0) {
     // if no customers in a table brings back this message
     NSB.MsgBox("There are no customers.")
   } else {
     //a loop that adds all the customers in the array to the dropdown.
-    for (i = 0; i <= results.length - 1; i++)
-      drpCustomer.addItem(results[i])
+    for (i = 0; i <= customerResults.length - 1; i++)
+      drpCustomer.addItem(customerResults[i])
   }
 
 }
@@ -43,6 +43,9 @@ drpCustomer.onclick = function(s) {
     it in a label, using a literal.
     */
     drpCustomer.value = s // make dropdown show the choice the user made
-    txtResults1.value = `You picked ${s} -that is a great choice!`
+    let customerMessage = ""
+    for (i = 0; i <= customerResults.length - 1; i++)
+        customerMessage = customerMessage + customerResults[i] + "\n"
+    txtCustomer.value = customerMessage
   }
 }
