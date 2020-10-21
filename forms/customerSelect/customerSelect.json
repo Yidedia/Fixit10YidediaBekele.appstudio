@@ -25,24 +25,6 @@
         "forms",
         "customerSelect",
         "Elements",
-        "txtResults.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "customerSelect",
-        "Elements",
-        "txtResults1.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "customerSelect",
-        "Elements",
         "txtCustomer.json"
       ]
     }
