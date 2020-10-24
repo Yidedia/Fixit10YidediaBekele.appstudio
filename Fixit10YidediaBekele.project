@@ -23,8 +23,16 @@
           "!type": "External",
           "file": [
             "forms",
-            "customerSelect",
-            "customerSelect.json"
+            "CustomerSelect",
+            "CustomerSelect.json"
+          ]
+        },
+        {
+          "!type": "External",
+          "file": [
+            "forms",
+            "customerDelete",
+            "customerDelete.json"
           ]
         }
       ],
@@ -47,7 +55,7 @@
       "eslintRules": null,
       "expanded_pmp": null,
       "extraheaders": null,
-      "firstform": "customerSelect",
+      "firstform": "CustomerSelect",
       "fontFamily": "system",
       "homescreenTitle": "",
       "icon": "nsb/images/192.png",

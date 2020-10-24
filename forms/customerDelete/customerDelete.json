@@ -14,36 +14,27 @@
       "!type": "External",
       "file": [
         "forms",
-        "CustomerSelect",
+        "customerDelete",
         "Elements",
-        "drpSelect.json"
+        "lblDelete.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "CustomerSelect",
+        "customerDelete",
         "Elements",
-        "lblSelect.json"
+        "drpDelete.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "CustomerSelect",
+        "customerDelete",
         "Elements",
-        "txtCustomerSelect.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "CustomerSelect",
-        "Elements",
-        "btnDelete.json"
+        "txtDelete.json"
       ]
     }
   ],
@@ -53,7 +44,7 @@
   "expanded_pmp": null,
   "fullScreen": "true",
   "height": 460,
-  "id": "CustomerSelect",
+  "id": "customerDelete",
   "language": "JavaScript",
   "left": "0",
   "locked": false,
@@ -61,7 +52,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "CustomerSelect1.onshow()",
+  "onshow": "customerDelete.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",
