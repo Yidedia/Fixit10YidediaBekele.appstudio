@@ -3,7 +3,7 @@ req = ""
 query = ""
 results = ""
 
-customerDelete.onshow=function(){
+customerDelete.onshow = function() {
   drpDelete.clear()
   query = "SELECT name from customer"
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)
@@ -19,5 +19,59 @@ customerDelete.onshow=function(){
     //a loop that adds all the customers in the array to the dropdown.
     for (i = 0; i <= customerDeleteR.length - 1; i++)
       drpDelete.addItem(customerDeleteR[i])
+  }
+}
+
+drpDelete.onclick = function(s) {
+  // check to see if dropdown was clicked
+  if (typeof(s) == "object")
+    return
+  else {
+    drpSelect.value = s // make dropdown show the choice the user made
+    let DeleteNameDel = s
+    // make sure the customers name is in the database before you try to delete it
+    let found = false
+    for (i = 0; i <= customerDeleteR.length - 1; i++) {
+      if (DeleteNameDel == customerDeleteR[i]) {
+        found = true;
+        break;
+      }
+    }
+    if (found == false)
+      NSB.MsgBox(`That customer is not in the database.${DeleteNameDel} \n ${customerDeleteR}`)
+    else if (found == true) {
+      query = "DELETE FROM customer WHERE name = " + '"' + DeleteNameDel + '"'
+      req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)
+      console.log(req.status)
+      console.log(req.responseTex)
+      console.log(query)
+      
+      if (req.status == 200) { //transit worked.
+        if (req.responseText == 500) // means the insert succeeded
+          NSB.MsgBox(`You have successfully deleted the pet named ${DeleteNameDel}`)
+        else
+          NSB.MsgBox(`There was a problem deleting ${DeleteNameDel} from the database.`)
+      } else {
+        // transit error
+        NSB.MsgBox(`Error: ${req.status}`);
+      }
+    }
+    // run the ajax to get the new list of customers
+    query = `SELECT name from customer`
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)
+
+    if (req.status == 200) { //transit worked.
+      //save the sate of the customer 
+      customerAfterDelete = JSON.parse(req.responseText)
+    } else {
+      // transit error
+      console.log(`Error: ${req.status}`);
+    }
+    // putting new list of customers into txtDelete
+    let customersLeft = ""
+    for (i = 0; i <= customerAfterDelete.length - 1; i++)
+      customersLeft = customersLeft + customerAfterDelete[i] + "\n"
+    // change value of text area
+    txtDelete.value = customersLeft
   }
 }

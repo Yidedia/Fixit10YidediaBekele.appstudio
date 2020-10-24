@@ -38,7 +38,7 @@
   "mLeft": "",
   "mRight": "",
   "mTop": "",
-  "onclick": "",
+  "onclick": "drpDelete.onclick()",
   "onmousedown": "",
   "onmousemove": "",
   "onmouseout": "",

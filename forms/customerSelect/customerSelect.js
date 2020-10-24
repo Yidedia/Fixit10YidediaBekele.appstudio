@@ -32,6 +32,7 @@ drpSelect.onclick=function(s){
   if (typeof(s) == "object")
     return
   else { // the user picked something
+    console.log(s)
     drpSelect.value = s // make dropdown show the choice the user made
     query = `SELECT state from customer WHERE name = '${s}'`
     //Grab the state of the customer chosen
