@@ -15,11 +15,11 @@
   "fontSize": "",
   "fontStyle": "",
   "fontWeight": "",
-  "height": 55,
+  "height": "auto",
   "hidden": "",
-  "id": "Label1",
+  "id": "Label2",
   "labelStyle": "text",
-  "left": 40,
+  "left": 35,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -42,7 +42,7 @@
   "right": "auto",
   "script": "",
   "style": "",
-  "top": 17,
-  "value": "Choose a customer to delete",
-  "width": 230
+  "top": 13,
+  "value": "Select A customer to see what other customers are in the same state.",
+  "width": "auto"
 }

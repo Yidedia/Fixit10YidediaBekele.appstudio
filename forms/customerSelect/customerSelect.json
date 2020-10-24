@@ -14,27 +14,36 @@
       "!type": "External",
       "file": [
         "forms",
-        "customerSelect",
+        "CustomerSelect",
         "Elements",
-        "txtCustomer.json"
+        "drpSelect.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "customerSelect",
+        "CustomerSelect",
         "Elements",
-        "nxt.json"
+        "Label2.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "customerSelect",
+        "CustomerSelect",
         "Elements",
-        "drpCustFind.json"
+        "txtCustomerSelect.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "CustomerSelect",
+        "Elements",
+        "btnDelete.json"
       ]
     }
   ],
@@ -44,7 +53,7 @@
   "expanded_pmp": null,
   "fullScreen": "true",
   "height": 460,
-  "id": "customerSelect",
+  "id": "CustomerSelect",
   "language": "JavaScript",
   "left": "0",
   "locked": false,
@@ -52,7 +61,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "customerSelect.onshow()",
+  "onshow": "CustomerSelect1.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",
