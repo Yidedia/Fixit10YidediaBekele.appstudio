@@ -42,18 +42,15 @@ drpDelete.onclick = function(s) {
     else if (found == true) {
       query = "DELETE FROM customer WHERE name = " + '"' + DeleteNameDel + '"'
       req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)
-      console.log(req.status)
-      console.log(req.responseTex)
-      console.log(query)
       
       if (req.status == 200) { //transit worked.
         if (req.responseText == 500) // means the insert succeeded
-          NSB.MsgBox(`You have successfully deleted the pet named ${DeleteNameDel}`)
+          console.log(`You have successfully deleted the pet named ${DeleteNameDel}`)
         else
-          NSB.MsgBox(`There was a problem deleting ${DeleteNameDel} from the database.`)
+          console.log(`There was a problem deleting ${DeleteNameDel} from the database.`)
       } else {
         // transit error
-        NSB.MsgBox(`Error: ${req.status}`);
+        console.log(`Error: ${req.status}`);
       }
     }
     // run the ajax to get the new list of customers
@@ -74,4 +71,7 @@ drpDelete.onclick = function(s) {
     // change value of text area
     txtDelete.value = customersLeft
   }
+}
+btnAdd.onclick=function(){
+  ChangeForm(customerAdd)
 }
