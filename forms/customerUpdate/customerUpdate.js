@@ -14,7 +14,7 @@ customerUpdate.onshow = function() {
   }
   if (results.length == 0) {
     // if no customers in a table brings back this message
-    NSB.MsgBox("There are no customers to Update.")
+    console.log("There are no customers to Update.")
   } else {
     //a loop that adds all the customers in the array to the dropdown.
     for (i = 0; i <= results.length - 1; i++)
@@ -47,7 +47,7 @@ btnChange.onclick = function() {
     }
 
   if (found == false)
-    NSB.MsgBox("That customer name is not in the database.")
+    console.log("That customer name is not in the database.")
   else if (found == true) {
     query = `UPDATE customer SET name = '${newName}' WHERE name = '${oldName}'`
     //alert(query)
@@ -55,15 +55,15 @@ btnChange.onclick = function() {
 
     if (req.status == 200) { //transit worked.
       if (req.responseText == 500) { // means the update succeeded
-        NSB.MsgBox(`You have successfully changed the customers name!`)
+        console.log(`You have successfully changed the customers name!`)
         // reset controls to original state
         inpNewName.value = ""
         drpUpdate.value = "Customer"
       } else
-        NSB.MsgBox(`There was a problem changing the Customers name.`)
+        console.log(`There was a problem changing the Customers name.`)
     } else
       // transit error
-      NSB.MsgBox(`Error: ${req.status}`);
+      console.log(`Error: ${req.status}`);
   } // found is true
   // loat txtarea
   query = "SELECT name from customer"

@@ -45,6 +45,15 @@
         "Elements",
         "btnAdd.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customerDelete",
+        "Elements",
+        "errorMsg.json"
+      ]
     }
   ],
   "class": "",

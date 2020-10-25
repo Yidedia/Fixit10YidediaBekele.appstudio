@@ -14,7 +14,7 @@ customerDelete.onshow = function() {
   }
   if (customerDeleteR.length == 0) {
     // if no customers in a table brings back this message
-    NSB.MsgBox("There are no customers to delete.")
+    errorMsg.value = "There are no customers to delete."
   } else {
     //a loop that adds all the customers in the array to the dropdown.
     for (i = 0; i <= customerDeleteR.length - 1; i++)
@@ -38,7 +38,7 @@ drpDelete.onclick = function(s) {
       }
     }
     if (found == false)
-      NSB.MsgBox(`That customer is not in the database.${DeleteNameDel} \n ${customerDeleteR}`)
+      errorMsg.value = `${DeleteNameDel} is not in the database.`
     else if (found == true) {
       query = "DELETE FROM customer WHERE name = " + '"' + DeleteNameDel + '"'
       req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=ymb85951&pass=" + pw + "&database=ymb85951&query=" + query)

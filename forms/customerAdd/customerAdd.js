@@ -9,12 +9,12 @@ btnAddCustomer.onclick = function() {
 
   if (req.status == 200) { //transit worked.
     if (req.responseText == 500) { // means the insert succeeded
-      NSB.MsgBox("You have successfully added the Customer!")
+      errorMsg1.value = "You have successfully added the Customer!"
     } else
-      NSB.MsgBox("There was a problem with adding the Customer to the database.")
+      errorMsg1 = "There was a problem with adding the Customer to the database."
   } else {
     // transit error
-    NSB.MsgBox("Error: " + req.status);
+    console.log("Error: " + req.status);
   }
 
   query = `SELECT name from customer ORDER BY customer_id DESC`

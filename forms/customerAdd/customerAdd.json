@@ -45,6 +45,15 @@
         "Elements",
         "Button1.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customerAdd",
+        "Elements",
+        "errorMsg1.json"
+      ]
     }
   ],
   "class": "",
