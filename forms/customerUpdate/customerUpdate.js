@@ -74,7 +74,7 @@ btnChange.onclick = function() {
   }
  if (results.length == 0) {
     // if no customers in a table brings back this message
-    NSB.MsgBox("There are no customers in tabel.")
+    console.log("There are no customers in tabel.")
   } else {
     // putting new list of customers into txtDelete
     let customersUpdate = ""

@@ -17,7 +17,7 @@ CustomerSelect.onshow=function(){
   }
   if (customerSelectR.length == 0) {
     // if no customers in a table brings back this message
-    NSB.MsgBox("There are no customers found.")
+    console.log("There are no customers found.")
   } else {
     //a loop that adds all the customers in the array to the dropdown.
     for (i = 0; i <= customerSelectR.length - 1; i++)
