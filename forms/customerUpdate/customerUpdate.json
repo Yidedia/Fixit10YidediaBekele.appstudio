@@ -63,6 +63,24 @@
         "Elements",
         "btnChange.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customerUpdate",
+        "Elements",
+        "txtUpdatedList.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customerUpdate",
+        "Elements",
+        "lblTextArea.json"
+      ]
     }
   ],
   "class": "",
